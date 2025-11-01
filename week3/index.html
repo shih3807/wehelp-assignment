@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week 1</title>
+    <link rel="icon" href="image/wehelp-logo.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!--icon-->
+    <svg style="display:none">
+        <symbol id="icon-menu" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <style>
+                    .cls-1 {
+                        fill: none;
+                    }
+                </style>
+            </defs>
+            <title>Menu</title>
+            <g data-name="Layer 2" id="Layer_2">
+                <path d="M28,10H4A1,1,0,0,1,4,8H28a1,1,0,0,1,0,2Z" />
+                <path d="M28,17H4a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z" />
+                <path d="M28,24H4a1,1,0,0,1,0-2H28a1,1,0,0,1,0,2Z" />
+            </g>
+        </symbol>
+    </svg>
+    <svg style="display:none">
+        <symbol id="icon-star" version="1.1" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title>star</title>
+            <g fill="none" fill-rule="evenodd" id="Page-1" stroke="none" stroke-width="1">
+                <g id="019---Star">
+                    <path
+                        d="M31.7569,1.14435 L39.2006,16.94809 C39.4742047,17.5450605 40.0274966,17.9662669 40.67576,18.07109 L57.32037,20.60534 C58.0728338,20.7512497 58.6840769,21.2991656 58.9110909,22.0312558 C59.1381048,22.7633461 58.9440977,23.560962 58.4062,24.107 L46.36205,36.40845 C45.8969861,36.8906851 45.6879532,37.5647752 45.79858,38.22553 L48.64182,55.59553 C48.7969313,56.3422303 48.5093863,57.1116407 47.9025754,57.5735945 C47.2957646,58.0355484 46.4775729,58.1079148 45.7991,57.75964 L30.9117,49.55864 C30.3445605,49.2442297 29.6554395,49.2442297 29.0883,49.55864 L14.2009,57.75964 C13.5224271,58.1079148 12.7042354,58.0355484 12.0974246,57.5735945 C11.4906137,57.1116407 11.2030687,56.3422303 11.35818,55.59553 L14.20142,38.22553 C14.3120468,37.5647752 14.1030139,36.8906851 13.63795,36.40845 L1.5938,24.107 C1.05593046,23.5609597 0.861941478,22.7633618 1.08895299,22.0312898 C1.31596449,21.2992177 1.92718692,20.7513115 2.67963,20.60539 L19.32424,18.0711 C19.9725034,17.9662769 20.5257953,17.5450705 20.7994,16.9481 L28.2431,1.14435 C28.5505421,0.448721422 29.2394609,-5.16717968e-06 30,-5.16717968e-06 C30.7605391,-5.16717968e-06 31.4494579,0.448721422 31.7569,1.14435 Z"
+                        fill="#F6AB27" id="Shape" />
+                    <path
+                        d="M37.39,13.11 C32.5890747,15.6770414 28.15587,18.8791741 24.21,22.63 C20.0044812,26.6560517 16.436883,31.2993247 13.63,36.4 L1.59009,24.11 C1.05224467,23.5636351 0.858777828,22.7655877 1.086713,22.0335783 C1.31464817,21.3015689 1.92698179,20.7544339 2.67993,20.61 L19.32007,18.07 C19.967444,17.9624793 20.520694,17.5438036 20.80007,16.95 L28.24,1.14 C28.5507895,0.446404951 29.2399578,1.95277886e-05 30,1.95277886e-05 C30.7600422,1.95277886e-05 31.4492105,0.446404951 31.76,1.14 L37.39,13.11 Z"
+                        fill="#F4CD1E" id="Shape" />
+                </g>
+            </g>
+        </symbol>
+    </svg>
+    <svg style="display:none">
+        <symbol id="icon-close" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M6.2253 4.81108C5.83477 4.42056 5.20161 4.42056 4.81108 4.81108C4.42056 5.20161 4.42056 5.83477 4.81108 6.2253L10.5858 12L4.81114 17.7747C4.42062 18.1652 4.42062 18.7984 4.81114 19.1889C5.20167 19.5794 5.83483 19.5794 6.22535 19.1889L12 13.4142L17.7747 19.1889C18.1652 19.5794 18.7984 19.5794 19.1889 19.1889C19.5794 18.7984 19.5794 18.1652 19.1889 17.7747L13.4142 12L19.189 6.2253C19.5795 5.83477 19.5795 5.20161 19.189 4.81108C18.7985 4.42056 18.1653 4.42056 17.7748 4.81108L12 10.5858L6.2253 4.81108Z"
+                fill="currentColor" />
+        </symbol>
+    </svg>
+
+    <header>
+        <section class="nav-bar">
+            <h1>My Website</h1>
+            <div class="overlay"></div>
+            <!--漢堡選單按鈕-->
+            <button class="hamberger-menu">
+                <svg>
+                    <use xlink:href="#icon-menu"></use>
+                </svg>
+            </button>
+            <!--關閉選單按鈕-->
+            
+            <div class="aside-menu">
+                <nav class="menu">
+                    <ul class="list">
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                        <li>Item 4</li>
+                    </ul>
+                    <button class="close-menu">
+                        <svg>
+                            <use xlink:href="#icon-close"></use>
+                        </svg>
+                    </button>
+                </nav>
+            </div>
+        </section>
+
+        <section class="title">
+            <h2>Welcome to MyHome</h2>
+        </section>
+    </header>
+    <main>
+        <section class="bars">
+            <div class="promotion-1 bar-style">
+                <div class="bar-image">
+                    <img src="image/image-1.jpg" alt="好看的圖片">
+                </div>
+                <p>Promotion 1</p>
+            </div>
+            <div class="promotion-2 bar-style">
+                <div class="bar-image">
+                    <img src="image/image-1.jpg" alt="好看的圖片">
+                </div>
+                <p>Promotion 2</p>
+            </div>
+            <div class="promotion-3 bar-style">
+                <div class="bar-image">
+                    <img src="image/image-1.jpg" alt="好看的圖片">
+                </div>
+                <p>Promotion 3</p>
+            </div>
+        </section>
+        <div class="load-contenter">
+            <section class="content-blocks">
+                <div class="block-1 block-style">
+                    <img src="image/image-1.jpg" alt="好看的圖片">
+                    <div class="star-svg">
+                        <svg class="star">
+                            <use href="#icon-star"></use>
+                        </svg>
+                    </div>
+                    <div class="text">
+                        <p>Title 1</p>
+                    </div>
+                </div>
+                <div class="block-2 block-style">
+                    <img src="image/image-1.jpg" alt="好看的圖片">
+                    <div class="star-svg">
+                        <svg class="star">
+                            <use href="#icon-star"></use>
+                        </svg>
+                    </div>
+                    <div class="text">
+                        <p>Title 2</p>
+                    </div>
+                </div>
+                <div class="block-3 block-style">
+                    <img src="image/image-1.jpg" alt="好看的圖片">
+                    <div class="star-svg">
+                        <svg class="star">
+                            <use href="#icon-star"></use>
+                        </svg>
+                    </div>
+                    <div class="text">
+                        <p>Title 3</p>
+                    </div>
+                </div>
+                <div class="block-4 block-style">
+                    <img src="image/image-1.jpg" alt="好看的圖片">
+                    <div class="star-svg">
+                        <svg class="star">
+                            <use href="#icon-star"></use>
+                        </svg>
+                    </div>
+                    <div class="text">
+                        <p>Title 4</p>
+                    </div>
+                </div>
+                <div class="block-5 block-style">
+                    <img src="image/image-1.jpg" alt="好看的圖片">
+                    <div class="star-svg">
+                        <svg class="star">
+                            <use href="#icon-star"></use>
+                        </svg>
+                    </div>
+                    <div class="text">
+                        <p>Title 5</p>
+                    </div>
+                </div>
+                <div class="block-6 block-style">
+                    <img src="image/image-1.jpg" alt="好看的圖片">
+                    <div class="star-svg">
+                        <svg class="star">
+                            <use href="#icon-star"></use>
+                        </svg>
+                    </div>
+                    <div class="text">
+                        <p>Title 6</p>
+                    </div>
+                </div>
+                <div class="block-7 block-style">
+                    <img src="image/image-1.jpg" alt="好看的圖片">
+                    <div class="star-svg">
+                        <svg class="star">
+                            <use href="#icon-star"></use>
+                        </svg>
+                    </div>
+                    <div class="text">
+                        <p>Title 7</p>
+                    </div>
+                </div>
+                <div class="block-8 block-style">
+                    <img src="image/image-1.jpg" alt="好看的圖片">
+                    <div class="star-svg">
+                        <svg class="star">
+                            <use href="#icon-star"></use>
+                        </svg>
+                    </div>
+                    <div class="text">
+                        <p>Title 8</p>
+                    </div>
+                </div>
+                <div class="block-9 block-style">
+                    <img src="image/image-1.jpg" alt="好看的圖片">
+                    <div class="star-svg">
+                        <svg class="star">
+                            <use href="#icon-star"></use>
+                        </svg>
+                    </div>
+                    <div class="text">
+                        <p>Title 9</p>
+                    </div>
+                </div>
+                <div class="block-10 block-style">
+                    <img src="image/image-1.jpg" alt="好看的圖片">
+                    <div class="star-svg">
+                        <svg class="star">
+                            <use href="#icon-star"></use>
+                        </svg>
+                    </div>
+                    <div class="text">
+                        <p>Title 10</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <button class="road-more-button">
+            <p>Load More</p>
+        </button>
+    </main>
+
+    <script>
+        //漢堡選單
+        const burger = document.querySelector(".hamberger-menu");
+        const closeBtn = document.querySelector(".close-menu");
+        const asidemenu = document.querySelector(".aside-menu");
+        const overlay = document.querySelector(".overlay");
+
+        burger.addEventListener("click", () => {
+            asidemenu.classList.add("active");
+            overlay.classList.add("active"); 
+        });
+
+        closeBtn.addEventListener("click", () => {
+            asidemenu.classList.remove("active");
+            overlay.classList.remove("active"); 
+        });
+
+        overlay.addEventListener("click", () => {
+            asidemenu.classList.remove("active");
+            overlay.classList.remove("active");
+        });
+        
+        //載入圖片
+        let startIndex = 3; 
+
+        const loadNewBtn = document.querySelector(".road-more-button");
+        const templateSection = document.querySelector(".content-blocks");
+        const loadContenter = document.querySelector(".load-contenter");
+
+        let attractionData = [];
+
+        function fillBlocks(section, start) {
+                const blockImages = section.querySelectorAll(".block-style img");
+                const blockTexts = section.querySelectorAll(".block-style .text p");
+
+                for (let i = 0; i < 10; i++) {
+                    const dataItem = attractionData[start + i];
+                    if (!dataItem) return;
+
+                    blockImages[i].src = dataItem.img;
+                    blockImages[i].alt = dataItem.title;
+                    blockImages[i].title = dataItem.title;
+                    blockTexts[i].textContent = dataItem.title;
+                }
+        }
+
+
+        fetch("attraction.json")
+            .then(response => response.json())
+            .then(data => {
+                attractionData = data;
+
+                //bars
+                const barImages = document.querySelectorAll(".bar-style .bar-image img");
+                const barTexts = document.querySelectorAll(".bar-style p");
+
+                for (let i = 0; i < 3; i++) {
+                    barImages[i].src = attractionData[i].img;
+                    barImages[i].alt = attractionData[i].title;
+                    barImages[i].title = attractionData[i].title;
+                    barTexts[i].textContent = attractionData[i].title;
+                }
+                //blocks
+                fillBlocks(templateSection, startIndex);
+                startIndex += 10;
+            });
+
+
+        loadNewBtn.addEventListener("click", () => {
+            if (startIndex >= attractionData.length) {
+                loadNewBtn.style.display = "none";
+                return;
+            }
+            const newSection = templateSection.cloneNode(true);
+            loadContenter.appendChild(newSection);
+
+            fillBlocks(newSection, startIndex);
+
+            startIndex += 10;
+
+            if (startIndex >= attractionData.length) {
+               loadNewBtn.style.display = "none"; 
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
