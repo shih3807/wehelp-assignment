@@ -87,138 +87,8 @@
     </header>
     <main>
         <section class="bars">
-            <div class="promotion-1 bar-style">
-                <div class="bar-image">
-                    <img src="image/image-1.jpg" alt="好看的圖片">
-                </div>
-                <p>Promotion 1</p>
-            </div>
-            <div class="promotion-2 bar-style">
-                <div class="bar-image">
-                    <img src="image/image-1.jpg" alt="好看的圖片">
-                </div>
-                <p>Promotion 2</p>
-            </div>
-            <div class="promotion-3 bar-style">
-                <div class="bar-image">
-                    <img src="image/image-1.jpg" alt="好看的圖片">
-                </div>
-                <p>Promotion 3</p>
-            </div>
         </section>
-        <div class="load-contenter">
-            <section class="content-blocks">
-                <div class="block-1 block-style">
-                    <img src="image/image-1.jpg" alt="好看的圖片">
-                    <div class="star-svg">
-                        <svg class="star">
-                            <use href="#icon-star"></use>
-                        </svg>
-                    </div>
-                    <div class="text">
-                        <p>Title 1</p>
-                    </div>
-                </div>
-                <div class="block-2 block-style">
-                    <img src="image/image-1.jpg" alt="好看的圖片">
-                    <div class="star-svg">
-                        <svg class="star">
-                            <use href="#icon-star"></use>
-                        </svg>
-                    </div>
-                    <div class="text">
-                        <p>Title 2</p>
-                    </div>
-                </div>
-                <div class="block-3 block-style">
-                    <img src="image/image-1.jpg" alt="好看的圖片">
-                    <div class="star-svg">
-                        <svg class="star">
-                            <use href="#icon-star"></use>
-                        </svg>
-                    </div>
-                    <div class="text">
-                        <p>Title 3</p>
-                    </div>
-                </div>
-                <div class="block-4 block-style">
-                    <img src="image/image-1.jpg" alt="好看的圖片">
-                    <div class="star-svg">
-                        <svg class="star">
-                            <use href="#icon-star"></use>
-                        </svg>
-                    </div>
-                    <div class="text">
-                        <p>Title 4</p>
-                    </div>
-                </div>
-                <div class="block-5 block-style">
-                    <img src="image/image-1.jpg" alt="好看的圖片">
-                    <div class="star-svg">
-                        <svg class="star">
-                            <use href="#icon-star"></use>
-                        </svg>
-                    </div>
-                    <div class="text">
-                        <p>Title 5</p>
-                    </div>
-                </div>
-                <div class="block-6 block-style">
-                    <img src="image/image-1.jpg" alt="好看的圖片">
-                    <div class="star-svg">
-                        <svg class="star">
-                            <use href="#icon-star"></use>
-                        </svg>
-                    </div>
-                    <div class="text">
-                        <p>Title 6</p>
-                    </div>
-                </div>
-                <div class="block-7 block-style">
-                    <img src="image/image-1.jpg" alt="好看的圖片">
-                    <div class="star-svg">
-                        <svg class="star">
-                            <use href="#icon-star"></use>
-                        </svg>
-                    </div>
-                    <div class="text">
-                        <p>Title 7</p>
-                    </div>
-                </div>
-                <div class="block-8 block-style">
-                    <img src="image/image-1.jpg" alt="好看的圖片">
-                    <div class="star-svg">
-                        <svg class="star">
-                            <use href="#icon-star"></use>
-                        </svg>
-                    </div>
-                    <div class="text">
-                        <p>Title 8</p>
-                    </div>
-                </div>
-                <div class="block-9 block-style">
-                    <img src="image/image-1.jpg" alt="好看的圖片">
-                    <div class="star-svg">
-                        <svg class="star">
-                            <use href="#icon-star"></use>
-                        </svg>
-                    </div>
-                    <div class="text">
-                        <p>Title 9</p>
-                    </div>
-                </div>
-                <div class="block-10 block-style">
-                    <img src="image/image-1.jpg" alt="好看的圖片">
-                    <div class="star-svg">
-                        <svg class="star">
-                            <use href="#icon-star"></use>
-                        </svg>
-                    </div>
-                    <div class="text">
-                        <p>Title 10</p>
-                    </div>
-                </div>
-            </section>
+        <div class="load-container">
         </div>
         <button class="road-more-button">
             <p>Load More</p>
@@ -247,70 +117,115 @@
             overlay.classList.remove("active");
         });
         
-        //載入圖片
-        let startIndex = 3; 
+    //bars and blocks
+    async function loadData(){
+        //匯入檔案
+        const infoUrl = "https://cwpeng.github.io/test/assignment-3-1"
+        const picUrl = "https://cwpeng.github.io/test/assignment-3-2"
 
-        const loadNewBtn = document.querySelector(".road-more-button");
-        const templateSection = document.querySelector(".content-blocks");
-        const loadContenter = document.querySelector(".load-contenter");
+        const [infoRespon, picRespon] = await Promise.all([fetch(infoUrl), fetch(picUrl)]);
+        const infoData = await infoRespon.json();
+        const picData = await picRespon.json();
 
-        let attractionData = [];
+        const host = picData["host"];
+        const picsDict = {}
 
-        function fillBlocks(section, start) {
-                const blockImages = section.querySelectorAll(".block-style img");
-                const blockTexts = section.querySelectorAll(".block-style .text p");
-
-                for (let i = 0; i < 10; i++) {
-                    const dataItem = attractionData[start + i];
-                    if (!dataItem) return;
-
-                    blockImages[i].src = dataItem.img;
-                    blockImages[i].alt = dataItem.title;
-                    blockImages[i].title = dataItem.title;
-                    blockTexts[i].textContent = dataItem.title;
-                }
+        for(let row of picData["rows"]){
+            let firstPic = row["pics"].split(".jpg")[0];
+            let imgUrl = `${host}${firstPic}.jpg`;
+            picsDict[row["serial"]] = imgUrl
         }
 
-
-        fetch("attraction.json")
-            .then(response => response.json())
-            .then(data => {
-                attractionData = data;
-
-                //bars
-                const barImages = document.querySelectorAll(".bar-style .bar-image img");
-                const barTexts = document.querySelectorAll(".bar-style p");
-
-                for (let i = 0; i < 3; i++) {
-                    barImages[i].src = attractionData[i].img;
-                    barImages[i].alt = attractionData[i].title;
-                    barImages[i].title = attractionData[i].title;
-                    barTexts[i].textContent = attractionData[i].title;
-                }
-                //blocks
-                fillBlocks(templateSection, startIndex);
-                startIndex += 10;
-            });
-
-
-        loadNewBtn.addEventListener("click", () => {
-            if (startIndex >= attractionData.length) {
-                loadNewBtn.style.display = "none";
-                return;
-            }
-            const newSection = templateSection.cloneNode(true);
-            loadContenter.appendChild(newSection);
-
-            fillBlocks(newSection, startIndex);
-
-            startIndex += 10;
-
-            if (startIndex >= attractionData.length) {
-               loadNewBtn.style.display = "none"; 
-            }
+        const attractions = infoData["rows"].map(row =>{
+            let title = row["sname"];
+            let serial = row["serial"];
+            let img = picsDict[serial];
+            return{title,img};
         });
 
+        const barContainer = document.querySelector(".bars");
+        const loadContainer = document.querySelector(".load-container");
+        const loadMoreBtn = document.querySelector(".road-more-button")
 
+        //bars
+        for(let i = 0; i < 3;i++){
+            let barDiv = document.createElement("div");
+            barDiv.className = `promotion-${i+1} bar-style`;
+
+            let imgDiv = document.createElement("div");
+            imgDiv.className ="bar-image";
+
+            let img = document.createElement("img");
+            img.src = attractions[i]["img"];
+            img.alt = attractions[i]["title"];
+            
+            imgDiv.appendChild(img);
+
+            let p = document.createElement("p");
+            p.textContent = attractions[i]["title"];
+
+            barDiv.appendChild(imgDiv);
+            barDiv.appendChild(p);
+
+            barContainer.appendChild(barDiv);
+        }
+        //block
+        let startIndex = 3;
+        const batchSize = 10;
+
+        function renderBlocks(){
+            let endIndex = startIndex + batchSize;
+            let blockContainer = document.createElement("section");
+            blockContainer.className = "content-blocks";
+
+            for(let i = 0; i < batchSize;i++){
+                if (startIndex+i >= attractions.length) {
+                    loadMoreBtn.style.display = "none";
+                    break
+                };
+
+
+                let blockDiv = document.createElement("div");
+                blockDiv.className = `block-${i + 1} block-style`; 
+
+                let img = document.createElement("img");
+                img.src = attractions[startIndex+i]["img"];
+                img.alt = attractions[startIndex+i]["title"];
+
+                let starDiv = document.createElement("div");
+                starDiv.className = "star-svg";
+                let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                svg.classList.add("star");
+                let use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+                use.setAttribute("href", "#icon-star");
+                svg.appendChild(use);
+                starDiv.appendChild(svg);
+
+                let textDiv = document.createElement("div");
+                textDiv.className = "text";
+                let p = document.createElement("p");
+                p.textContent = attractions[startIndex+i]["title"];
+                textDiv.appendChild(p);
+
+                blockDiv.appendChild(img);
+                blockDiv.appendChild(starDiv);
+                blockDiv.appendChild(textDiv);
+
+                blockContainer.appendChild(blockDiv);
+            };
+                loadContainer.appendChild(blockContainer);
+
+            startIndex += batchSize;
+
+        };
+            
+        renderBlocks()
+        //loadMoreBtn
+        loadMoreBtn.addEventListener("click", () =>{
+            renderBlocks()
+        })
+    }
+    loadData()
     </script>
 </body>
 
