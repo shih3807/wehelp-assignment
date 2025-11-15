@@ -121,8 +121,12 @@
 
 - UPDATE data in name column to test2 where email equals to test@test.com .
 
+          UPDATE member
+          SET name = 'test2'
+          WHERE email = 'test@test.com';
+
 <p align="center">
-  <img src="image/3-1.png" width="70%">
+  <img src="image/3-8.png" width="40%">
 </p>
 
 # Task 4: SQL Aggregation Functions
@@ -221,11 +225,12 @@
 </p>
 
 - Use SELECT, SQL Aggregation Functions with JOIN statement, get the average like count of messages where sender email equals to test@test.com.
-  SELECT AVG(message.like_count)
-  FROM member
-  LEFT JOIN message
-  ON member.id = message.member_id
-  WHERE member.email = 'test@test.com';
+
+          SELECT AVG(message.like_count)
+          FROM member
+          LEFT JOIN message
+          ON member.id = message.member_id
+          WHERE member.email = 'test@test.com';
 
 <p align="center">
   <img src="image/5-4.png" width="40%">
