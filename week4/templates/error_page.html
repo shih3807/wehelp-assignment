@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="icon" href="{{url_for('static', path='/wehelp-logo.png')}}">
+    <link rel="stylesheet" href="{{url_for('static', path='/styles.css')}}">
+
+<body>
+    <header>
+        <div class="title_text">失敗頁面</div>
+    </header>
+    <main>
+        <div class="notification">{{msg}}</div>
+        <div class="return_link"><a href="/" />返回首頁</div>
+    </main>
+</body>

@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background-color: #223343;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title_text {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main_text {
+    margin: 30px 0px 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.form_item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    gap: 20px;
+}
+
+label {
+    font-size: 20px;
+}
+
+input {
+    height: 20px;
+    width: 170px;
+    caret-color: #ccdee8;
+    font-size: 15px;
+    padding: 5px;
+}
+
+input:focus {
+    border: 2px solid #223343;
+    outline: none;
+    border-radius: 5px;
+}
+
+
+button {
+    width: 80px;
+    padding: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #223343;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ccdee8;
+}
+
+hr {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.notification {
+    font-size: 20px;
+    margin: 40px 0;
+}
+
+.return_link {
+    width: 120px;
+    height: 30px;
+    padding: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #223343;
+    background-color: aliceblue;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    font-size: 15px;
+    color: #223343;
+}
+
+.return_link:hover {
+    background-color: #ccdee8;
+}
+
+.message_bar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message {
+    width: 380px;
+    border-radius: 3px;
+    border: 1px solid lightblue;
+    padding: 14px 16px;
+    position: relative;
+}
+
+.message.self {
+    border: 1px solid #223343;
+}
+
+.message .name {
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #223343;
+}
+
+.message .content {
+    color: black;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.message .delete {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #223343;
+    color: white;
+    border: none;
+    width: 22px;
+    height: 22px;
+    line-height: 8px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.message .delete:hover {
+    background: #ccdee8;
+}
+
+@media (max-width:420px) {
+    .title_text {
+        font-size: 20px;
+    }
+    .message {
+        width: 200px;
+    }
+}

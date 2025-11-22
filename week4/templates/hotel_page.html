@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="icon" href="{{url_for('static', path='/wehelp-logo.png')}}">
+    <link rel="stylesheet" href="{{url_for('static', path='/styles.css')}}">
+
+<body>
+    <header>
+        <div class="title_text">旅館的資訊</div>
+    </header>
+    <main>
+        {% if hotel_information %}
+        <div class="notification">{{hotel_information.name_ch}}、{{hotel_information.en_name}}、{{hotel_information.phone}}</div>
+        {% else %}
+        <div class="notification">查詢不到相關資料</div>
+        {% endif %}
+        <div class="return_link"><a href="/" />返回首頁</div>
+    </main>
+</body>

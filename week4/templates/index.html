@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="icon" href="{{url_for('static', path='/wehelp-logo.png')}}">
+    <link rel="stylesheet" href="{{url_for('static', path='/styles.css')}}">
+<body>
+    <header>
+        <div class="title_text">歡迎光臨，請輸入信箱密碼</div>
+    </header>
+    <main>
+        <div class="main_text">登入系統</div>
+        <form id="loginForm" method="POST" action="/login">
+            <div class="form_item">
+                <label for="email">信箱</label>
+                <input type="text" id="email" name="email"/>
+            </div>
+            <div class="form_item">
+                <label for="password">密碼</label>
+                <input type="password" id="password" name="password"/>
+            </div>
+            <div class="form_item">
+                <label for="agree">同意條款</label>
+                <input class="checkbox" type="checkbox" id="checkbox" name="agree"/>
+            </div>
+            <div class="form_item">
+            <button type="submit">登入</button>
+            </div>
+        </form>
+        <hr/>
+        <div class="main_text">取得旅館資訊</div>
+        <form id="hotelInformation" >
+            <div class="form_item">
+                <label for="serial">編號</label>
+                <input type="text" id="serial" name="serial" />
+            </div>
+            <div class="form_item">
+                <button type="submit">取得</button>
+            </div>
+        </form>
+    </main>
+    <script>
+        const formLogin = document.getElementById("loginForm");
+        const checkbox = document.getElementById("checkbox");
+            formLogin.addEventListener("submit",function(event){
+                if(!checkbox.checked){
+                    event.preventDefault();
+                    alert("請勾選同意條款")
+                }
+            });
+        const formHotelInformation = document.getElementById("hotelInformation");
+        const serialInput = document.getElementById("serial");
+
+        formHotelInformation.addEventListener("submit",function(event){
+            event.preventDefault();
+            const serial = Number(serialInput.value)
+            if(!Number.isInteger(Number(serial)) || serial <= 0){
+                event.preventDefault();
+                alert("請輸入正整數");
+                return
+            }
+            window.location.href = `/hotel/${serial}`;
+        })
+
+        
+    </script>
+    
+</body>
+</html>
