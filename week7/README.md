@@ -1,4 +1,4 @@
-## Assignment - Week 6
+## Assignment - Week 7
 
 ### 環境安裝
 
