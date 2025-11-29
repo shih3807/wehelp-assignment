@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="icon" href="{{url_for('static', path = 'wehelp-logo.png')}}">
+    <link rel="stylesheet" href="{{url_for('static', path = 'styles.css')}}">
+</head>
+<body>
+    <header>
+        <div class="title_text">歡迎光臨，請註冊登入系統</div>
+    </header>
+    <main>
+        <div class="main_text">註冊帳號</div>
+        <form id="signupForm" method="POST" action="/signup">
+            <div class="form_item">
+                <label for="signupName">姓名</label>
+                <input type="text" id="signupName" name="name"/>
+            </div>
+            <div class="form_item">
+                <label for="signupEmail">信箱</label>
+                <input type="text" id="signupEmail" name="email"/>
+            </div>
+            <div class="form_item">
+                <label for="signupPassword">密碼</label>
+                <input type="password" id="signupPassword" name="password"/>
+            </div>    
+            <button type="submit">註冊</button>
+        </form>
+        <hr/>
+        <div class="main_text">登入系統</div>
+        <form id="loginForm" method="POST" action="/login">
+            <div class="form_item">
+                <label for="loginEmail">信箱</label>
+                <input type="text" id="loginEmail" name="email" />
+            </div>
+            <div class="form_item">
+                <label for="loginPassword">密碼</label>
+                <input type="password" id="loginPassword" name="password" />
+            </div> 
+        <button type="submit">登入</button>  
+        </form> 
+    </main>
+<script src="{{url_for('static', path = 'main.js')}}" defer></script>
+</body>
+</html>

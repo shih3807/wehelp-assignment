@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Page</title>
+    <link rel="icon" href="{{url_for('static', path='wehelp-logo.png')}}">
+    <link rel="stylesheet" href="{{url_for('static', path='styles.css')}}">
+</head>
+
+<body>
+    <header>
+        <div class="title_text">歡迎光臨，這是會員頁</div>
+    </header>
+    <main>
+        <div id="welcome-text" class="notification">{{user_name}}，歡迎登入系統</div>
+        <a href="/logout"><div class="return_link">登出系統</div></a>
+    
+    <hr />
+    <div class="main_text">查詢會員姓名</div>
+    <div class="form_item">
+    <input id="search_id" type="text">
+    <button id="search_btn">查詢</button>
+    </div>
+    <div id="search_result" class="notification"></div>
+    <hr />
+    <div class="main_text">更新我的姓名</div>
+    <div class="form_item">
+        <input id="update_name" type="text">
+        <button id="update_name_btn">更新</button>
+    </div>
+    <div id="update_name_result" class="notification"></div>
+    <hr />
+    <div class="main_text">誰查詢了我</div>
+    <button id="member-query_btn">更新</button>
+    <div id="member-query_result" class="notification"></div>
+    </main>
+<script src="{{url_for('static', path = 'main.js')}}" defer></script>
+</body>
+</html>
